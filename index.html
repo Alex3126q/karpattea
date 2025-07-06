@@ -20,5 +20,40 @@
 <body>
 
 <header>
-  <h1
- 
+  <h1>Карпатський чай для чоловіків</h1>
+  <p>Сила природи для вашої енергії</p>
+</header>
+
+<div class="container">
+  <h2>Склад:</h2>
+  <p>Іван-чай, зеленчук, брусниця, верес, талабан, парило, хвощ польовий, ожина.</p>
+
+  <h2>Користь:</h2>
+  <ul>
+    <li>Підтримка чоловічого здоров’я</li>
+    <li>Покращення кровообігу</li>
+    <li>Проти запалення</li>
+  </ul>
+
+  <p class="price">Ціна: 79 грн</p>
+
+  <form action="https://karpattea-backend.onrender.com/send" method="POST">
+    <input name="name" placeholder="Ваше ім’я" required />
+    <input name="phone" placeholder="Номер телефону" required />
+    <select name="delivery" required>
+      <option value="">Оберіть доставку</option>
+      <option>Нова Пошта</option>
+      <option>Укрпошта</option>
+    </select>
+    <textarea name="address" placeholder="Адреса або № відділення" required></textarea>
+    <textarea name="comment" placeholder="Коментар (необов’язково)"></textarea>
+    <button>Надіслати замовлення</button>
+  </form>
+</div>
+
+<footer>
+  &copy; 2025 Карпатський чай. Телефон: +380678532147 | Telegram: @Karpattea
+</footer>
+
+</body>
+</html>
