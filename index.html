@@ -68,7 +68,7 @@
 
   <p class="price">Ціна: 79 грн</p>
 
-  <form action="https://karpattea-backend.onrender.com/send" method="POST">
+  <form>
     <input name="name" placeholder="Ваше ім’я" required />
     <input name="phone" placeholder="Номер телефону" required />
     <select name="delivery" required>
@@ -85,6 +85,38 @@
 <footer>
   &copy; 2025 Карпатський чай. Телефон: +380678532147 | Telegram: @Karpattea
 </footer>
+
+<script>
+  const form = document.querySelector("form");
+  const container = document.querySelector(".container");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const response = await fetch("https://karpattea-backend.onrender.com/send", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      form.reset();
+      const message = document.createElement("div");
+      message.style.background = "#e6f4ea";
+      message.style.border = "1px solid #a5d6a7";
+      message.style.padding = "20px";
+      message.style.marginTop = "20px";
+      message.style.borderRadius = "10px";
+      message.style.textAlign = "center";
+      message.innerHTML = "<strong>✅ Дякуємо! Ваше замовлення прийнято.</strong><br>Ми зв’яжемось із вами найближчим часом.";
+
+      form.replaceWith(message);
+    } else {
+      alert("⚠️ Виникла помилка. Спробуйте ще раз пізніше.");
+    }
+  });
+</script>
 
 </body>
 </html>
