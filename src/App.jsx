@@ -10,4 +10,9 @@ function App() {
 }
 
 export default App;
+import KarpatteaShop from "./KarpatteaShop";
+
+export default function App() {
+  return <KarpatteaShop />;
+}
 
